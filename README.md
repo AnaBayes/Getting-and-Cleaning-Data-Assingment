@@ -1,4 +1,4 @@
-# Getting-and-Cleaning-Data-Assingment
+# Getting and Cleaning Data Assingment
 
 This repository contains all the files for the Getting and Cleaning Data project.
 

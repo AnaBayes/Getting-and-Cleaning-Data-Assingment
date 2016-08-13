@@ -1,12 +1,12 @@
-Code Book
+#Code Book
 
-Raw data collection
+##Raw data collection
 
 Raw data are obtained from UCI Machine Learning repository, from the Human Activity Recognition Using Smartphones Data Set.
 The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
 
 
-Signals
+##Signals
 
 The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.
 
@@ -66,21 +66,21 @@ tBodyGyroMean
 tBodyGyroJerkMean
 
 
-Data transformation
+##Data transformation
 
-The run_analysis.R script creates a tidy data set by performing the steps described in the project.
+The *run_analysis.R* script creates a tidy data set by performing the steps described in the project.
 
-Merging training and test sets
-Activity and subject ids (y_train.txt, y_test.txt, subject_train.txt, subject_test.txt) were added as two new columns in test and training data sets. Test and training data sets ( X_train.txt, X_test.txt), are merged into one data set named Set. Variables are labelled with the correct names taken from features.txt. 
+###Merging training and test sets
+Activity and subject ids ("y_train.txt", "y_test.txt", "subject_train.txt", "subject_test.txt") were added as two new columns in test and training data sets. Test and training data sets ( "X_train.txt", "X_test.txt"), are merged into one data set named *Set*. Variables are labelled with the correct names taken from "features.txt". 
 
-Extracting mean and standard deviation variables
-From the merged data set only columns with the mean and standard deviation are extracted (columns    with labels that contain "mean" or “std”) and saved in two new data sets ( new variables – SetMean and SetStDev).
+###Extracting mean and standard deviation variables
+From the merged data set only columns with the mean and standard deviation are extracted (columns with labels that contain "mean" or "std") and saved in two new data sets ( new variables – *SetMean* and *SetStDev*).
  
-Using descriptive activity names
-Activity names were changed to the ones taken from activity_labels.txt and volunteers were given descriptive names with numbers.
+###Using descriptive activity names
+Activity names were changed to the ones taken from "activity_labels.txt" and volunteers were given descriptive names with numbers.
 
-Labeling variables appropriately
-Columns with names that contained abbreviated words were changed to obtain valid and more descriptive R names. All column names that contained “Acc”, “Mag”, “Gyro”, “^t”, “^f” were changed to contain “Accelerator”,”Magnitude”,”Gyroscope”,”Time” and “Frequency” instead (respectively).
+###Labeling variables appropriately
+Columns with names that contained abbreviated words were changed to obtain valid and more descriptive R names. All column names that contained "Acc", "Mag", "Gyro", "^t", "^f" were changed to contain "Accelerator","Magnitude","Gyroscope","Time" and "Frequency" instead (respectively).
 
-Creating a tidy data set
-From the merged data set (Set) is created a final tidy data set where the mean of every column is taken and broken down by  each activity and each volunteer and written in the new file "TidyData.txt". The new data set called TidyData contains 180 rows (6 activities * 30 volunteers).
+###Creating a tidy data set
+From the merged data set (*Set*) is created the final tidy data set where the mean of every column is taken and broken down by each activity and each volunteer and written in the new file *"TidyData.txt"*. The new data set called TidyData contains 180 rows (6 activities * 30 volunteers).
